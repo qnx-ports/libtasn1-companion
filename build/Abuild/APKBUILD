@@ -1,7 +1,7 @@
 # Maintainer: Leo Shen <yishen@qnx.com>
 pkgname=libtasn1
 pkgver=4.20.0
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="The ASN.1 library used in GNUTLS"
 url="https://www.gnu.org/software/gnutls"
 arch="all"
@@ -32,6 +32,7 @@ utils() {
     amove usr/bin
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 0c0660085f5e80537aa3d65197967029be6cc5e27d7029789713902989c1694fdb49421ae0415b79b953e11893bb4bdaada85f7aff847dd0bb4075c91887e7b4  libtasn1-4.20.0.tar.gz
 "
